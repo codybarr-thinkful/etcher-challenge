@@ -1,10 +1,21 @@
 // Add Event Listeners here:
+function hoverCell(){
+  $('section.grid').on('mouseover', '.cell', function(e){
+    $(this).addClass('active');
+  })
+}
+function resetGrid(){
+  $('button').on('click', e => {
+    $('.cell').removeClass('active');
+  })
+}
 
 
 // When DOM is ready:
 $(() => {
   createAndPlaceRows(8);
-
+  hoverCell();
+  resetGrid();
   // Bind your event listeners here:
 });
 
